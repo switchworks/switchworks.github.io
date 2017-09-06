@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
+      <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      overflow:hidden;
+      background-color:rgba(0,0,0,1);
+      color:white;
+      font-size:18px;
+      font-weight: 900;
+      font-feature-settings: "fwid";
+    }
+    #elecboard {
+      filter: url(#gauss);
+    }
+    .check {
+      position:fixed;
+      -webkit-mask-image: url("dmatrix.png");
+      width:100%;
+      height:100%;
+    }
+    #main {
+      position:fixed;
+      image-rendering: pixelated;
+      transform-origin: left top;
+      transform: scale(2.0);
+    }
+    #editor {
+      position:fixed;
+      top:200px;
+    }
+    #test {
+      display:none;
+    }
+    #src {
+      width : 60em;
+      height : 10em;
+    }
+  </style>
+  </head>
+  <body>
+
+<svg id="test" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<defs>
+ <filter id="gauss">
+   <feGaussianBlur stdDeviation="3" result="blur"/>
+   <feBlend in="SourceGraphic" in2="blur" mode="screen" result="out1"/>
+   <feBlend in="SourceGraphic" in2="blur" mode="screen" result="out2"/>
+   <feBlend in="SourceGraphic" in2="blur" mode="screen" result="out3"/>
+   <feBlend in="SourceGraphic" in2="blur" mode="screen" result="out4"/>
+   <feBlend in="SourceGraphic" in2="blur" mode="screen" result="out5"/>
+      <feMerge>
+        <feMergeNode in="out1" />
+        <feMergeNode in="out2" />
+        <feMergeNode in="out3" />
+        <feMergeNode in="out4" />
+        <feMergeNode in="out5" />
+      </feMerge>
+ </filter>
+</defs>
+</svg>
+
+<div id="elecboard">
+<div class="check">
+<div id="main">
+</div>
+</div>
+</div>
+
+<div id="editor">
+<textarea id="src" onkeypress="ok_textarea(event.keyCode);" change="t2h();">
+</textarea>
+</div>
+
+<script>
+var src = document.getElementById('src');
+var main = document.getElementById('main');
+function ok_textarea(code){
+  if(13 === code){t2h();}
+}
+function t2h(){
+  main.innerHTML = src.value.replace("　"," ","g");
+  src.value　= src.value.replace("　"," ","g");
+}
+src.value = '<span　style="color:#00ff00;">快特</span> <span　style="color:#ff8800;">三崎口</span> <span style="background-color:#ff8800;color:black;">都営線からの快速</span><br/>'.replace("　"," ","g") + 
+'<span style="background-color:#ff0000;color:black;">駅構内や車内で不審な物、不審な</span>'.replace("　"," ","g");
+t2h();
+</script>
+
+
+
+  </body>
+</html>

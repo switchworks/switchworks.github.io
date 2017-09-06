@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    color : #888888;
+    background-color : black;
+}
+input[type="text"] {
+    color : #888888;
+    background-color : black;
+    width : 4em;
+}
+.box{
+    display:inline-block;
+}
+</style>
+</head>
+<body>
+
+
+<div class="box">
+<table border="0" width="200">
+<tr><td>baseFrequency</td><td><input id="bF1" type="text" value="0.05" onkeyup="redraw1();" /></td></tr>
+<tr><td>numOctaves</td><td><input id="nO1" type="text" value="5" onkeyup="redraw1();" /></td></tr>
+<tr><td>seed</td><td><input id="se1" type="text" value="3" onkeyup="redraw1();" /></td></tr>
+</table>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+    <defs>
+        <filter id="fractalNoise" filterUnits="userSpaceOnUse" x="0" y="0" width="200" height="200">
+            <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="5" seed="3" stitchTiles="stitch"></feTurbulence>
+
+        </filter>
+    </defs>
+    <rect filter="url(#fractalNoise)" x="0" y="0" width="200" height="200"></rect>
+</svg>
+</div>
+
+
+<div class="box">
+<table border="0" width="200">
+<tr><td>baseFrequency</td><td><input id="bF2" type="text" value="0.05" onkeyup="redraw2();" /></td></tr>
+<tr><td>numOctaves</td><td><input id="nO2" type="text" value="5" onkeyup="redraw2();" /></td></tr>
+<tr><td>seed</td><td><input id="se2" type="text" value="3" onkeyup="redraw2();" /></td></tr>
+</table>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+    <defs>
+        <filter id="turbulence" filterUnits="userSpaceOnUse" x="0" y="0" width="200" height="200">
+            <feTurbulence type="turbulence" baseFrequency="0.05" numOctaves="5" seed="3" stitchTiles="stitch"></feTurbulence>
+
+        </filter>
+    </defs>
+    <rect filter="url(#turbulence)" x="0" y="0" width="200" height="200"></rect>
+</svg>
+</div>
+
+
+<script>
+var fractalNoise = document.getElementById("fractalNoise");
+var turbulence = document.getElementById("turbulence");
+function redraw1(){
+    fractalNoise.children[0].setAttribute("baseFrequency",document.getElementById("bF1").value);
+    fractalNoise.children[0].setAttribute("numOctaves",document.getElementById("nO1").value);
+    fractalNoise.children[0].setAttribute("seed",document.getElementById("se1").value);
+}
+function redraw2(){
+    turbulence.children[0].setAttribute("baseFrequency",document.getElementById("bF2").value);
+    turbulence.children[0].setAttribute("numOctaves",document.getElementById("nO2").value);
+    turbulence.children[0].setAttribute("seed",document.getElementById("se2").value);
+}
+</script>
+
+
+</body>
+</html>
