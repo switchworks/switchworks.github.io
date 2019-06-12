@@ -1,5 +1,5 @@
 auto: true
 server: true
 markdown: kramdown
-baseurl: "https://switchworks.github.io"
+baseurl: ""
 url: "https://gh.s1224.com"
