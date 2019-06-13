@@ -3,4 +3,5 @@ server: true
 markdown: kramdown
 baseurl: ""
 url: "https://gh.s1224.com"
-paginate: 5
+pagination_nr: 5
+paginate_path: /page:num/
