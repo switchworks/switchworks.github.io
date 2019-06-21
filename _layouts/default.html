@@ -4,45 +4,51 @@
 	<meta charset='utf-8'>
 	<title>{{page.title}} - s1224.com</title>
 	<link href="https://fonts.googleapis.com/css?family=Orbitron:700&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 	<style>
+	@font-face {
+		font-family: "YuGothic M";
+		src: local("Yu Gothic Medium");
+	}
+	html {
+		height : 100%;
+	}
 	body {
 		margin: 0;
-		overflow:hidden;
-		font-family : 'Share Tech Mono', "Rounded Mplus 1c";
-		color : #cccccc;
-		background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 1.0)) , url("/images/0023.jpg");
+		overflow-y:scroll;
+		height : 100%;
+		font-family : 'Share Tech Mono', "游ゴシック体", YuGothic, "YuGothic M", "ヒラギノ角ゴ Pro W3", sans-serif;
+		color : #dddddd;
+		background: url("/images/0023bg.jpg");
 		background-size: cover;
+		-webkit-scrollbar : white transparent;
+	}
+	#wrapper {
+		max-width: 896px;
+		margin: auto;
 	}
 	header {
 		height : 65px;
+		padding : 0.2em 0 0 0.5em;
+		color:white;
 		font-family : 'Orbitron';
 		font-size : 48px;
 		font-weight: bold;
 	}
 	#sidebar {
-		width: 10em;
-		height:100%;
 		color:white;
-		font-weight:700;
-		float: left;
 		user-select: none;
+		padding: 0 0 1em 6em;
 	}
 	#sidebar ul{
 		margin:0;
 		padding:0;
-		border-style:solid;
-		border-width:1px 0px 0px 0px;
-		border-color:#444;
 	}
 	#sidebar li{
+		display: inline;
 		list-style-type: none;
 		font-size:24px;
-		border-style:solid;
-		border-width:0px 0px 1px 0px;
-		border-color:#444;
-		padding-left:0.5em;
 	}
 	#sidebar li a{
 		text-decoration: none;
@@ -51,14 +57,15 @@
 	#sidebar li:hover{
 		background-color: #ffffff20;
 	}
-	#sidebar li:last-child{
-		border-style:none;
-	}
 	article{
 		overflow:hidden;
+		padding-left : 1.5em;
+		text-shadow: 1px 1px 0 #00000080, -1px -1px 0 #00000080, -1px 1px 0 #00000080, 1px -1px 0 #00000080, 0px 1px 0 #00000080, 0-1px 0 #00000080, -1px 0 0 #00000080, 1px 0 0 #00000080;
 	}
 	article h1 {
 		color : #cc0066;
+		margin : 0;
+		font-size: 30px;
 	}
 	article h1 a {
 		color : #cc0066;
@@ -67,6 +74,16 @@
 	article h1 a:hover {
 		text-decoration : underline;
 	}
+	::-webkit-scrollbar{
+		width: 0.5em;
+	}
+	::-webkit-scrollbar-track{
+		background: #888;
+	}
+	::-webkit-scrollbar-thumb{
+		background: #ccc;
+		border-radius: 10px;
+	}
 	</style>
 	<script type="text/javascript">
 	</script>
@@ -74,6 +91,7 @@
 	</head>
 
 	<body>
+	<div id="wrapper">
 		<header>
 			s1224.com
 		</header>
@@ -91,5 +109,6 @@
 		</article>
 		<footer>
 		</footer>
+	</div>
 	</body>
 </html>
