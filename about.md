@@ -2,9 +2,7 @@
 layout: default
 title:  about
 ---
-# about
-
-## switchworks
+# about switchworks
 *(すいっちわーくす、SOU1、そういち、1981年12月24日 - )*  
 
 ミュージシャン、Geek、オタク...  
