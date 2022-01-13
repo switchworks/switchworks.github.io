@@ -1,7 +1,7 @@
 auto: true
 server: true
 markdown: kramdown
-baseurl: ""
+baseurl: "https://gh.s1224.com"
 url: "https://gh.s1224.com"
 lang: ja
 paginate: 5
