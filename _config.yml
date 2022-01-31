@@ -1,6 +1,7 @@
 auto: true
 server: true
 markdown: kramdown
+include: ["_pages"]
 baseurl: "https://gh.s1224.com"
 url: "https://gh.s1224.com"
 lang: ja
